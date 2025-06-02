@@ -1,0 +1,55 @@
+
+.conteiner {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.noticia{
+
+    padding-right:360px;
+
+}
+
+.titulo-nota{
+    font-size: 50px;
+    font-weight:700;
+    margin-bottom: 15px;
+}
+
+.subtitulo{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.726);
+    margin-bottom: 15px;
+}
+
+.p_fecha{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.726);
+    margin-bottom: 20px;
+}
+
+.descripcion_foto{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.726);
+    margin-top: 10px;
+    font-style: italic;
+    text-align: right;
+}
+
+img{
+    width: 100%;
+}
+iframe{
+    width: 100%;
+}
+
+.negrita{
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+p{
+    font-size: 25px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: rgb(99, 99, 99);
+}

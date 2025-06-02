@@ -1,0 +1,149 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+.conteiner {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.noticia {
+    padding-right: 360px;
+}
+
+.titulo-nota {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.726);
+    margin-bottom: 15px;
+}
+
+.p_fecha {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.726);
+    margin-bottom: 20px;
+}
+
+.descripcion_foto {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.726);
+    margin-top: 10px;
+    font-style: italic;
+    text-align: right;
+}
+
+img {
+    width: 100%;
+}
+iframe {
+    width: 100%;
+}
+
+.negrita {
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+p {
+    font-size: 25px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: rgb(99, 99, 99);
+}
+
+
+/*---------------------------- barra menu --------------------*/
+
+.barra-menu {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.menu-top {
+    position: relative;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.menu-hamburguesa {
+    display: none;
+}
+
+.logo-sitio {
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+}
+
+.barra-menu .p_fecha {
+    display: block;
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.barra-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.barra-menu li {
+    padding: 0px 10px 0px 10px;
+}
+
+.barra-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.barra-menu li:hover,
+.barra-menu li.activo {
+    background-color: #e31e26;
+}
+
+.registrar {
+    background-color: rgb(200, 0, 0);
+    border-radius: 5px;
+}
+
+/* ---------------------------- media query -------------------------*/
+
+@media (max-width: 750px) {
+    .noticia {
+        padding-right: 0px;
+        margin: 10px;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 5px 10px;
+    }
+
+    .logo-sitio {
+        height: 30px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .barra-menu .p_fecha {
+        display: none;
+    }
+
+    .barra-menu ul {
+        display: none;
+    }
+}
