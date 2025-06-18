@@ -1,0 +1,167 @@
+.header {
+  background: #2f5d50;
+  color: white;
+  text-align: center;
+  padding: 16px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #407861;
+  padding: 8px 16px;
+}
+
+.menu {
+  list-style: none;
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: inline;
+  margin-right: 16px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburguesa {
+  font-size: 24px;
+  color: white;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.principal img {
+  width: 100%;
+  height: auto;
+}
+
+.principal h2 {
+  margin: 8px 0;
+  color: #2b594d;
+}
+
+.principal a {
+  color: #2b594d;
+  text-decoration: none;
+}
+.secundarias{
+  background-color: #577b6b65;
+  border-radius: 8px;
+  padding: 13px 16px;
+  margin-bottom: 19px;
+}
+
+.secundarias img {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.secundarias h3 {
+  color: #25624a;
+}
+.publicidad img {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.footer {
+  text-align: center;
+  background: #2f5d50;
+  color: white;
+  padding: 16px;
+}
+
+/* ----- mq 1 ----- */
+
+@media (min-width: 768px) {
+  .menu {
+    display: flex;
+    gap: 16px;
+  }
+  .menu li {
+    display: inline;
+    margin-right: 0;
+  }
+  .hamburguesa {
+    display: none;
+  }
+
+  .contenido {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .secundarias {
+    flex: 1 1 200px;
+    order: 1;
+    margin-right: 16px;
+    max-width: 250px;
+  }
+  .principal {
+    flex: 2 1 400px;
+    order: 2;
+    margin-right: 16px;
+    min-width: 300px;
+  }
+  .publicidad {
+    flex-basis: 100%;
+    order: 3;
+    margin-right: 0;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+  }
+  .publicidad img {
+    width: 200px;
+    margin-bottom: 0;
+  }
+}
+
+
+/* ----- mq 2 ----- */
+
+
+@media (min-width: 1100px) {
+  .contenido {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .secundarias {
+    order: 1;
+    max-width: 250px;
+    margin-right: 16px;
+  }
+  .principal {
+    order: 2;
+    min-width: 400px;
+    margin-right: 16px;
+  }
+  .publicidad {
+    order: 3;
+    flex-basis: 250px;
+    max-width: 250px;
+    margin-top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .publicidad img {
+    width: 100%;
+  }
+}
