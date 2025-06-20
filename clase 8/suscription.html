@@ -27,7 +27,7 @@
       <li><a href="./index.html">Cambio Climático</a></li>
       <li><a href="./index.html">Ciudades Verdes</a></li>
       <li><a href="./index.html">Educación Ambiental</a></li>
-      <li><a href="#">Formulario inscripcion</a></li>
+      <li><a href="#" class="linkFormulario">Formulario inscripcion</a></li>
     </ul>
     <div class="hamburguesa">☰</div>
   </div>
@@ -37,39 +37,51 @@
     <div class="principal">
 
   <div class="formulario">
-    <h2>Formulario de Registro</h2>
-    <form action="#" method="post">
-      <label for="nombre">Nombre completo:</label>
-      <input type="text" id="nombre" name="nombre" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" required>
-      
-      <label for="edad">Edad:</label>
-      <input type="number" id="edad" name="edad" min="18" required>
-      
-      <label for="telefono">Teléfono:</label>
-      <input type="text" id="telefono" name="telefono" required>
-      
-      <label for="direccion">Dirección:</label>
-      <input type="text" id="direccion" name="direccion" required>
-      
-      <label for="ciudad">Ciudad:</label>
-      <input type="text" id="ciudad" name="ciudad" required>
-      
-      <label for="codigo_postal">Código Postal:</label>
-      <input type="text" id="codigo_postal" name="codigo_postal" required>
-      
-      <label for="dni">DNI:</label>
-      <input type="text" id="dni" name="dni" required>
-      
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
+  <h2>Formulario de Registro</h2>
+
+<form id="registroForm" action="#" method="post" novalidate>
+  <label for="nombre">Nombre completo:</label>
+  <input type="text" id="nombre" name="nombre" required>
+  <span id="error-nombre"></span>
   
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <span id="error-email"></span>
+  
+  <label for="password">Contraseña:</label>
+  <input type="password" id="password" name="password" required>
+  <span id="error-password"></span>
+  
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" name="edad" min="18" required>
+  <span id="error-edad"></span>
+  
+  <label for="telefono">Teléfono:</label>
+  <input type="text" id="telefono" name="telefono" required>
+  <span id="error-telefono"></span>
+  
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" name="direccion" required>
+  <span id="error-direccion"></span>
+  
+  <label for="ciudad">Ciudad:</label>
+  <input type="text" id="ciudad" name="ciudad" required>
+  <span  id="error-ciudad"></span>
+  
+  <label for="codigo_postal">Código Postal:</label>
+  <input type="text" id="codigo_postal" name="codigo_postal" required>
+  <span  id="error-codigo_postal"></span>
+  
+  <label for="dni">DNI:</label>
+  <input type="text" id="dni" name="dni" required>
+  <span id="error-dni"></span>
+  
+  <button type="submit">Enviar</button>
+</form>
+  
+
+</div>
+
     </div>
 
     <div class="secundarias">
@@ -102,6 +114,7 @@
     <p>&copy; 2025 Eco Diario</p>
   </div>
 
+  <script src="./script.js"></script>
 </body>
 </html>
 
