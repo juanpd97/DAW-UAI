@@ -1,9 +1,22 @@
 window.onload = function() {
   var form = document.getElementById('registroForm');
+
+  var saved = localStorage.getItem('datosUsuarioLS');
+  if (saved) {
+    try {
+      var data = JSON.parse(saved);
+      for (var key in data) {
+        if (data.hasOwnProperty(key) && document.getElementById(key)) {
+          document.getElementById(key).value = data[key];
+        }
+      }
+    } catch (e) {}
+  }
+
   form.onsubmit = function(event) {
     var bool = true;
 
-    // Limpiar mensajes de error
+    
     document.getElementById('error-nombre').innerHTML = '';
     document.getElementById('error-email').innerHTML = '';
     document.getElementById('error-password').innerHTML = '';
@@ -108,9 +121,88 @@ window.onload = function() {
       bool = false;
     }
 
-    // evitar envío si el formulñario tiene algun error
+     
     if (!bool) {
       event.preventDefault();
+      return false;
+    }
+
+     
+    event.preventDefault();
+
+    var datos = {
+      nombre: nombre,
+      email: email,
+      password: password,
+      edad: edad,
+      telefono: telefono,
+      direccion: direccion,
+      ciudad: ciudad,
+      codigo_postal: cp,
+      dni: dni
+    };
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(datos)
+    })
+    .then(function(response) {
+      if (!response.ok) {
+        throw response;
+      }
+      return response.json();
+    })
+    .then(function(data) {
+      localStorage.setItem('datosUsuarioLS', JSON.stringify(datos));
+      mostrarModal('Exito', data);
+    })
+    .catch(function(error) {
+      if (typeof error.json === 'function') {
+        error.json().then(function(errData) {
+          mostrarModal('Error', errData);
+        });
+      } else {
+        mostrarModal('Error', error);
+      }
+    });
+
+    // ---------- modal 
+    function mostrarModal(titulo, datos) {
+            var viejo = document.getElementById('modal-suscripcion');
+      if (viejo) viejo.parentNode.removeChild(viejo);
+
+      var modal = document.createElement('div');
+      modal.id = 'modal-suscripcion';
+
+      var h2 = document.createElement('h2');
+      h2.innerText = titulo;
+      modal.appendChild(h2);
+
+      if (datos) {
+        var pre = document.createElement('pre');
+        pre.innerText = JSON.stringify(datos, null, 2);
+        modal.appendChild(pre);
+      }
+
+      var btn = document.createElement('button');
+      btn.innerText = 'Cerrar';
+      btn.onclick = function() {
+        modal.parentNode.removeChild(modal);
+      };
+      modal.appendChild(btn);
+
+      modal.style.position = 'fixed';
+      modal.style.top = '50%';
+      modal.style.left = '50%';
+      modal.style.transform = 'translate(-50%, -50%)';
+      modal.style.background = 'rgb(174, 195, 153)';
+      modal.style.padding = '10px';
+      modal.style.zIndex = '9999';
+
+      document.body.appendChild(modal);
     }
   };
 };

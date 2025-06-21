@@ -2,6 +2,7 @@ window.onload = function() {
   var form = document.getElementById('registroForm');
   form.onsubmit = function(event) {
     var bool = true;
+    var errores = [];
 
     // Limpiar mensajes de error
     document.getElementById('error-nombre').innerHTML = '';
@@ -18,6 +19,7 @@ window.onload = function() {
     var nombre = document.getElementById('nombre').value;
     if (nombre.length < 7 || nombre.indexOf(' ') === -1) {
       document.getElementById('error-nombre').innerHTML = 'Debe tener mas de 6 letras y al menos un espacio';
+      errores.push('Nombre: Debe tener mas de 6 letras y al menos un espacio');
       bool = false;
     }
 
@@ -25,6 +27,7 @@ window.onload = function() {
     var email = document.getElementById('email').value;
     if (!email.includes('@') || !email.includes('.')) {
       document.getElementById('error-email').innerHTML = 'Mail invalido';
+      errores.push('Email: Mail invalido');
       bool = false;
     }
 
@@ -43,6 +46,7 @@ window.onload = function() {
     }
     if (password.length < 8 || !letras || !numeros) {
       document.getElementById('error-password').innerHTML = 'Al menos 8 caracteres,letras o números';
+      errores.push('Contraseña: Al menos 8 caracteres, letras o números');
       bool = false;
     }
 
@@ -50,6 +54,7 @@ window.onload = function() {
     var edad = parseInt(document.getElementById('edad').value, 10);
     if (isNaN(edad) || edad < 18) {
       document.getElementById('error-edad').innerHTML = 'Debe ser mayor a 18';
+      errores.push('Edad: Debe ser mayor a 18');
       bool = false;
     }
 
@@ -59,12 +64,14 @@ window.onload = function() {
       for (var i = 0; i < telefono.length; i++) {
         if (telefono[i] == ' ' || telefono[i] == '-' || telefono[i] == '(' || telefono[i] == ')') {
           document.getElementById('error-telefono').innerHTML = 'No se permiten espacios, guiones ni paréntesis';
+          errores.push('Teléfono: No se permiten espacios, guiones ni paréntesis');
           bool = false;
           break;
         }
       }
     } else {
       document.getElementById('error-telefono').innerHTML = 'Debe tener al menos 7 dígitos';
+      errores.push('Teléfono: Debe tener al menos 7 dígitos');
       bool = false;
     }
 
@@ -84,6 +91,7 @@ window.onload = function() {
     }
     if (direccion.length < 5 || !letrasDir || !numerosDir || !espacio) {
       document.getElementById('error-direccion').innerHTML = 'Al menos 5 caracteres, con letras, números y un espacio.';
+      errores.push('Dirección: Al menos 5 caracteres, con letras, números y un espacio.');
       bool = false;
     }
 
@@ -91,6 +99,7 @@ window.onload = function() {
     var ciudad = document.getElementById('ciudad').value;
     if (ciudad.length < 3) {
       document.getElementById('error-ciudad').innerHTML = 'Al menos 3 caracteres.';
+      errores.push('Ciudad: Al menos 3 caracteres.');
       bool = false;
     }
 
@@ -98,6 +107,7 @@ window.onload = function() {
     var cp = document.getElementById('codigo_postal').value;
     if (cp.length < 3) {
       document.getElementById('error-codigo_postal').innerHTML = 'Al menos 3 caracteres.';
+      errores.push('Código Postal: Al menos 3 caracteres.');
       bool = false;
     }
 
@@ -105,12 +115,32 @@ window.onload = function() {
     var dni = document.getElementById('dni').value;
     if (dni.length < 7 || dni.length > 8 || isNaN(dni)) {
       document.getElementById('error-dni').innerHTML = 'Debe ser un número de 7 u 8 dígitos.';
+      errores.push('DNI: Debe ser un número de 7 u 8 dígitos.');
       bool = false;
     }
 
-    // evitar envío si el formulñario tiene algun error
+    
+    
     if (!bool) {
       event.preventDefault();
+      var mensajeErrores = 'Errores:\n';
+      for (var i = 0; i < errores.length; i++) {
+        mensajeErrores += errores[i] + '\n';
+      }
+      alert(mensajeErrores);
+    } else {
+      event.preventDefault();
+      var datos = 
+        'Nombre: ' + nombre + '\n' +
+        'Email: ' + email + '\n' +
+        'Contraseña: ' + password + '\n' +
+        'Edad: ' + edad + '\n' +
+        'Teléfono: ' + telefono + '\n' +
+        'Dirección: ' + direccion + '\n' +
+        'Ciudad: ' + ciudad + '\n' +
+        'Código Postal: ' + cp + '\n' +
+        'DNI: ' + dni;
+      alert('Datos ingresados:\n' + datos);
     }
   };
 };
