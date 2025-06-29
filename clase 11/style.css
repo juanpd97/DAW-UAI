@@ -1,0 +1,68 @@
+body {
+    background: #222 url('./wallpapersden.com_rick-in-rick-and-morty_1920x1080.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#btnObtenerTodos {
+    background-color: rgb(167, 167, 167);
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    margin: 10px;
+}
+
+#formFiltrarPersonajes {
+    background-color: rgba(65, 65, 65, 0.551);
+    color: aliceblue;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+#formFiltrarPersonajes label {
+    margin-right: 10px;
+}
+
+#formFiltrarPersonajes input, #formFiltrarPersonajes select {
+    margin: 5px;
+    padding: 5px;
+}
+
+#formFiltrarPersonajes button {
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+table {
+    width: 85%;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.826);
+    margin: 10px;
+
+}
+
+table th {
+    background-color: rgb(97, 97, 97);
+    color: white;
+    padding: 10px;
+}
+
+table td {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px;
+}
+
+table img {
+    max-width: 100px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>rickandmortyapi</title>
+</head>
+
+<body>
+    <div style="text-align: center; background-color: #ed1919;">
+        <a href="../index.html" style="text-decoration: none;">
+            <button style="padding: 10px 20px; background-color: #2e2e2e; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Volver al menu</button>
+        </a>
+    </div>
+    <hr style="border: 1px solid black;">
+    <!-- -------------------------------Comienzo de la actividad ------------------------------- -->
+    
+    <div class="container">
+    <button id="btnObtenerTodos">Mostrar todos los personajes</button>
+    </div>
+    
+    <form id="formFiltrarPersonajes" action="">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="status">Estado:</label>
+        <select id="status" name="status">
+            <option value=""></option>
+            <option value="alive">Alive</option>
+            <option value="dead">Dead</option>
+            <option value="unknown">Unknown</option>
+        </select>
+
+        <label for="species">Especie:</label>
+        <input type="text" id="species" name="species">
+
+        <label for="type">Tipo:</label>
+        <input type="text" id="type" name="type">
+
+        <label for="gender">Género:</label>
+        <select id="gender" name="gender">
+            <option value=""></option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="genderless">Genderless</option>
+            <option value="unknown">Unknown</option>
+        </select>
+
+        <button type="submit">Filtrar</button>
+    </form>
+    
+
+    
+
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Especie</th>
+                <th>Género</th>
+            </tr>
+        </thead>
+        <tbody id="mostrarPersonajes">
+        </tbody>
+    </table>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
