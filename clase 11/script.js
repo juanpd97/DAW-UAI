@@ -1,13 +1,14 @@
 var tbodyMostrarPersonajes = document.getElementById('mostrarPersonajes');
 
 function mostrarPersonajes(listaPersonajes){
-    tbodyMostrarPersonajes.innerHTML = '';
-
+    
+    var htmlListaPjs = '';
     for(var i=0 ; i<listaPersonajes.length ; i++){
 
+        
         var personaje = listaPersonajes[i];
 
-        tbodyMostrarPersonajes.innerHTML += 
+        htmlListaPjs += 
             `
                 <tr> 
                 <td>${personaje.id}</td>
@@ -19,6 +20,7 @@ function mostrarPersonajes(listaPersonajes){
                 </tr>
             `;}
 
+        tbodyMostrarPersonajes.innerHTML= htmlListaPjs;
 
 }
 
@@ -86,8 +88,8 @@ var formFiltrarPersonajes = document.getElementById('formFiltrarPersonajes').add
 
         if(parametrosConsulta != ''){
             buscarPersonajesFiltrados('?' + parametrosConsulta);
-        } else
-        alert('F');
+        }// else
+        //alert('error');
     }
 )
 
